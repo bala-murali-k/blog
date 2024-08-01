@@ -1,0 +1,35 @@
+html, body {
+	margin: 3em;
+}
+
+a {
+	text-decoration: none;
+}
+
+pre code {
+    display: block;
+    padding: 1em;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+pre {
+	border: .2em solid black;
+	border-radius: 15px;
+}
+
+.note {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.left-space {
+	margin-left: 2em;
+}
+
+code {
+	margin-left: .5em;
+	margin-right: .5em;
+}
