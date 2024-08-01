@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content="viewport=device-width initial-scale=1.0">
+		<meta name="Bala" content="Learn how to create a default directory for a Java to-do application based on the operating system.">
+		<title>Simple Blogs</title>
+		<link rel="stylesheet" type="text/css" href="../../../style.css">
+	</head>
+	<body>
+		<header>
+			<h2 style="text-align: center;">Simple Blogs</h2>
+			<h2 style="text-align: center;">How to create a default directory using Java</h2>
+		</header>
+		<main>
+			<article>
+				<div class="note">
+					<div>
+						<header>
+							<h3>Required Concepts to be known.</h3>
+						</header>
+						<section>
+							<p>
+								<ol>
+									<li>Objects</li>
+									<li>Constructors</li>
+									<li>Files</li>
+								</ol>
+							</p>
+						</section>
+					</div>
+				</div>
+
+				<section>
+					<h3> What is this application? </h3>
+					<p> We are going to develop a command line to-do application using java, Where we can add tasks, Change a status of a task, Automatic status update and so on. Inshort just an normal to-do application by ourselves. </p>
+					<br />
+					<p> In this article we are going to create a default directory for our application based on our operating system. These are the default folders we are going to create in this article.
+						<ol> <strong> For Windows </strong> &nbsp;&nbsp;&nbsp;&nbsp; C:/Users/windows/.todo-list/ </ol> 
+						<ol> <strong> For Linux </strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; home/username/ </ol> 
+						<ol> <strong> Others </strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ./todo-list/ </ol> 
+					</p>
+					<p> As for mac, I didn't have worked with mac so you can replace the directory with your own. Now let's dive into the code. </p>
+				</section>
+
+				<section>
+					<pre>
+						<code>
+		import java.io.File;
+
+		class Todo {
+
+			//variables necessary for directory creation
+			private String os = System.getProperty("os.name");
+			private String file_path = null;
+			private String file_path_windows = "C:/Users/windows/.todo-list/";
+			private String file_path_linux = System.getProperty("user.home") + "/.todo-list/";
+
+			//Constructor
+			Todo() {
+
+				if (os.contains("win")) {
+					file_path = file_path_windows;
+				} else {
+					file_path = file_path_linux;
+				}
+
+				//Attempting to create default folder
+				createFolder(file_path);
+
+				if (!new File(file_path).exists()) {
+					file_path = "./todo-list/";
+					createFolder(file_path);
+				}
+			}
+
+			//method to create folder
+			public static void createFolder(String path) {
+				File directory = new File(path);
+
+				if (!directory.exists()) {
+					if (!directory.mkdirs()) {
+						System.err.println("Failed to create directory in " + path);
+					} else {
+						System.out.println("Directory created successfully in " + path);
+					}
+				}
+			}
+
+			//main method
+			public static void main (String[] args) {
+				Todo todo = new Todo();
+			}
+		}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<div>
+						<p> Let's go through this code line by line. <br /> </p>
+						<div class="left-space">
+							<p>
+								In the line (1) <strong> <code style="text-align: center;">import java.io.File;</code> </strong> We are just importing the "File" class with this line as we are going to create the directory with the help of this file class. <br /><br />
+
+								In the line (3) <strong> <code>class Todo {}</code> </strong> we are creating a class named Todo (Make sure that the class is properly closed.)<br /><br />
+
+								In the line (6) <strong> <code>private String os = System.getProperty("os.name"); </code> </strong> we are creating a string variable that stores the name of the operating system you are currently using. You can test it out by <strong> <code> System.out.println(System.getProperty("os.name")); </code> </strong> This line will print the name of the operating system you are using. <br />
+								This variable is declared private so that the value is not accessible outside of the Todo class, But it can be accessed and modified within the Todo class. <br /><br />
+
+								In the line (7) <strong> <code> private String file_path = null; </code> </strong> we are creating a variable named file_path and initializing it with the null value so that the compiler does not throw any error while compiling. <br /><br />
+
+								In the line (8) <strong> <code> private String file_path_windows = "C:/Users/windows/.todo-list/"; </code> </strong> we are creating a variable that stores a default path for windows operating system. <br /><br />
+
+								In the line (9) <strong> <code> private String file_path_linux = System.getProperty("user.home") + "/.todo-list/" </code> </strong> we are creating a variable that stores a default path for Linux operating system. The line <strong> <code> System.getProperty("user.home"); </code> </strong> will return the linux home path. <br /><br />
+
+								In the line (12) <strong> <code> Todo() {} </code> </strong> we are creating a constructor for our class. This block of code will run automatically when an object is created for this class (The object is created in the main method.). Now we are going to look inside the constructor block. <br /><br />
+
+								<div class="left-space">
+									<p>
+										In the line (14) <strong> <code> if (os.contains("win")) {} </code> </strong> we are checking if the value of the os variable contains "win" the if block will execute. Otherwise the else block will execute.<br /><br />
+
+										Inside the if block (15) <strong> <code> file_path = file_path_windows; </code> </strong> we are updating the file_path with the windows path value.<br /><br />
+
+										Inside the else block (17) <strong> <code> file_path = file_path_linux; </code> </strong> we are updating the file_path with the linux path value incase the if condition is false.<br /><br />
+
+										In the line (21) <strong> <code> createFolder(file_path); </code> </strong> we are calling the createFolder method with the updated file_path variable, which will create the folders with the file_path value.<br /><br />
+
+										In the line (23) <strong> <code> if (!new File(file_path).exists()) {} </code> </strong> we are checking the directory in the file_path variable is created or not. The condition <strong> <code> new File(file_path).exists() </code> </strong> will be true if the directory in the file_path variable exists, Basically it means if this condition is false then the mission is failed successfully (-100000 Aura) . But we need to do something if the directory is not created so we invert the result using "!" logical NOT operator and create a directory where the program is running.<br /><br />
+
+										In the line (24) <strong> <code> file_path = "./todo-list"; </code> </strong> we are updating the file_path variable with the current folder.<br /><br />
+
+										In the line (25) we are again trying to create a folder by calling the createFolder method. That's all with the constructor.
+									</p>
+								</div> <br /><br />
+
+								Now we are past the constructor and In the line (30) <strong> <code> public static void createFolder(String path) {} </code> </strong> we are creating a method that require a string as a argument. Without the string the method won't work. Now we are going to enter inside the createFolder method.<br /><br />
+
+								<div class="left-space">
+									<p>
+										In the line (31) <strong> <code> File directory = new File(path); </code> </strong> we are creating an object named directory for the class File which we imported in line (1).<br /><br />
+
+										In the line (33) <strong> <code> if (!directory.exists()) {} </code> </strong> we are doing the same in the line (13) and check if the path is available or not. If the directory is available the rest of the code will not run (There is no reason tp create a directory when there already is one). If the directory is not present we will go to the next line.<br /><br />
+
+										In the line (34) <strong> <code> if (!directory.mkdirs()) {} </code> </strong> we are creating the directory in the provided path. The line <strong> <code> directory.mkdirs() </code> </strong> will create the specified path for us and as for the condition, if the directory is not created we will print the error message in the next line.<br /><br />
+
+										In the line (35) <strong> <code> System.err.println("Failed to create directory in " + path); </code> </strong> we are telling the user that the program fails to create a directory in the machine (OS).<br /><br />
+
+										The next lines you know that if the directory is created we are printing a success message to the user. Now we are out of the createFolder method.
+									</p>
+								</div><br /><br />
+
+								In the line (43) <strong> <code> public static void main(String[] args) {} </code> </strong> we are creating the main method for out application.<br /><br />
+
+								In the line (44) <strong> <code> Todo todo = new Todo(); </code> </strong> we are just creating the object which will automatically execute the above codes and create a folder in the suitable location according to the operating system you are using.
+							</p>
+						</div>
+					</div>
+				</section>
+			</article>
+		</main>
+
+		<footer>
+			<a href="./index.html">> Back to Table of contents</a>
+		</footer>
+	</body>
+</html>
