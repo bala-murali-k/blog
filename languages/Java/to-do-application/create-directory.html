@@ -99,61 +99,100 @@
 				<section>
 					<div>
 						<p> Let's go through this code line by line. <br /> </p>
-						<div class="left-space">
-							<p>
-								In the line (1) <strong> <code style="text-align: center;">import java.io.File;</code> </strong> We are just importing the "File" class with this line as we are going to create the directory with the help of this file class. <br /><br />
+							<ul>
+								<li>
+									In line (1) : <strong> <code style="text-align: center;">import java.io.File;</code> </strong> - We are just importing the "File" class with this line as we are going to create the directory with the help of this file class. <br /><br />
+								</li>
 
-								In the line (3) <strong> <code>class Todo {}</code> </strong> we are creating a class named Todo (Make sure that the class is properly closed.)<br /><br />
+								<li>
+									In line (3) : <strong> <code>class Todo {}</code> </strong> we are creating a class named Todo (Make sure that the class is properly closed.)<br /><br />
+								</li>
 
-								In the line (6) <strong> <code>private String os = System.getProperty("os.name"); </code> </strong> we are creating a string variable that stores the name of the operating system you are currently using. You can test it out by <strong> <code> System.out.println(System.getProperty("os.name")); </code> </strong> This line will print the name of the operating system you are using. <br />
-								This variable is declared private so that the value is not accessible outside of the Todo class, But it can be accessed and modified within the Todo class. <br /><br />
+								<li>
+									In line (6) : <strong> <code>private String os = System.getProperty("os.name"); </code> </strong> - We are creating a string variable that stores the name of the operating system you are currently using. You can test it out by <strong> <code> System.out.println(System.getProperty("os.name")); </code> </strong> This line will print the name of the operating system you are using. <br />
+									This variable is declared private so that the value is not accessible outside of the Todo class, But it can be accessed and modified within the Todo class. <br /><br />
+								</li>
 
-								In the line (7) <strong> <code> private String file_path = null; </code> </strong> we are creating a variable named file_path and initializing it with the null value so that the compiler does not throw any error while compiling. <br /><br />
+								<li>
+									In line (7) : <strong> <code> private String file_path = null; </code> </strong> - We are creating a variable named file_path and initializing it with the null value so that the compiler does not throw any error while compiling. <br /><br />
+								</li>
 
-								In the line (8) <strong> <code> private String file_path_windows = "C:/Users/windows/.todo-list/"; </code> </strong> we are creating a variable that stores a default path for windows operating system. <br /><br />
+								<li>
+									In line (8) : <strong> <code> private String file_path_windows = "C:/Users/windows/.todo-list/"; </code> </strong> - We are creating a variable that stores a default path for windows operating system. <br /><br />
+								</li>
 
-								In the line (9) <strong> <code> private String file_path_linux = System.getProperty("user.home") + "/.todo-list/" </code> </strong> we are creating a variable that stores a default path for Linux operating system. The line <strong> <code> System.getProperty("user.home"); </code> </strong> will return the linux home path. <br /><br />
+								<li>
+									In line (9) : <strong> <code> private String file_path_linux = System.getProperty("user.home") + "/.todo-list/" </code> </strong> - We are creating a variable that stores a default path for Linux operating system. The line <strong> <code> System.getProperty("user.home"); </code> </strong> will return the linux home path. <br /><br />
+								</li>
 
-								In the line (12) <strong> <code> Todo() {} </code> </strong> we are creating a constructor for our class. This block of code will run automatically when an object is created for this class (The object is created in the main method.). Now we are going to look inside the constructor block. <br /><br />
+								<li>
+									In line (12) : <strong> <code> Todo() {} </code> </strong> - We are creating a constructor for our class. This block of code will run automatically when an object is created for this class (The object is created in the main method.). Now we are going to look inside the constructor block. <br /><br />
+								</li>
 
-								<div class="left-space">
-									<p>
-										In the line (14) <strong> <code> if (os.contains("win")) {} </code> </strong> we are checking if the value of the os variable contains "win" the if block will execute. Otherwise the else block will execute.<br /><br />
+								<ul>
+									<li>
+										In line (14) : <strong> <code> if (os.contains("win")) {} </code> </strong> - We are checking if the value of the os variable contains "win" the if block will execute. Otherwise the else block will execute.<br /><br />
+									</li>
 
-										Inside the if block (15) <strong> <code> file_path = file_path_windows; </code> </strong> we are updating the file_path with the windows path value.<br /><br />
+									<li>
+										Inside the if block (15) : <strong> <code> file_path = file_path_windows; </code> </strong> - We are updating the file_path with the windows path value.<br /><br />
+									</li>
 
-										Inside the else block (17) <strong> <code> file_path = file_path_linux; </code> </strong> we are updating the file_path with the linux path value incase the if condition is false.<br /><br />
+									<li>
+										Inside the else block (17) : <strong> <code> file_path = file_path_linux; </code> </strong> - We are updating the file_path with the linux path value incase the if condition is false.<br /><br />
+									</li>
 
-										In the line (21) <strong> <code> createFolder(file_path); </code> </strong> we are calling the createFolder method with the updated file_path variable, which will create the folders with the file_path value.<br /><br />
+									<li>
+										In line (21) : <strong> <code> createFolder(file_path); </code> </strong> - We are calling the createFolder method with the updated file_path variable, which will create the folders with the file_path value.<br /><br />
+									</li>
 
-										In the line (23) <strong> <code> if (!new File(file_path).exists()) {} </code> </strong> we are checking the directory in the file_path variable is created or not. The condition <strong> <code> new File(file_path).exists() </code> </strong> will be true if the directory in the file_path variable exists, Basically it means if this condition is false then the mission is failed successfully (-100000 Aura) . But we need to do something if the directory is not created so we invert the result using "!" logical NOT operator and create a directory where the program is running.<br /><br />
+									<li>
+										In line (23) : <strong> <code> if (!new File(file_path).exists()) {} </code> </strong> - We are checking the directory in the file_path variable is created or not. The condition <strong> <code> new File(file_path).exists() </code> </strong> will be true if the directory in the file_path variable exists, Basically it means if this condition is false then the mission is failed successfully (-100000 Aura) . But we need to do something if the directory is not created so we invert the result using "!" logical NOT operator and create a directory where the program is running.<br /><br />
+									</li>
 
-										In the line (24) <strong> <code> file_path = "./todo-list"; </code> </strong> we are updating the file_path variable with the current folder.<br /><br />
+									<li>
+										In line (24) : <strong> <code> file_path = "./todo-list"; </code> </strong> - We are updating the file_path variable with the current folder.<br /><br />
+									</li>
 
-										In the line (25) we are again trying to create a folder by calling the createFolder method. That's all with the constructor.
-									</p>
-								</div> <br /><br />
+									<li>
+										In line (25) : We are again trying to create a folder by calling the createFolder method. That's all with the constructor.
+									</li>
+								</ul> <br /><br />
 
-								Now we are past the constructor and In the line (30) <strong> <code> public static void createFolder(String path) {} </code> </strong> we are creating a method that require a string as a argument. Without the string the method won't work. Now we are going to enter inside the createFolder method.<br /><br />
+								<li>
+									Now we are past the constructor and In line (30) : <strong> <code> public static void createFolder(String path) {} </code> </strong> - We are creating a method that require a string as a argument. Without the string the method won't work. Now we are going to enter inside the createFolder method.<br /><br />
+								</li>
 
-								<div class="left-space">
-									<p>
-										In the line (31) <strong> <code> File directory = new File(path); </code> </strong> we are creating an object named directory for the class File which we imported in line (1).<br /><br />
+								<ul>
+									<li>
+										In line (31) : <strong> <code> File directory = new File(path); </code> </strong> - We are creating an object named directory for the class File which we imported in line (1).<br /><br />
+									</li>
 
-										In the line (33) <strong> <code> if (!directory.exists()) {} </code> </strong> we are doing the same in the line (13) and check if the path is available or not. If the directory is available the rest of the code will not run (There is no reason tp create a directory when there already is one). If the directory is not present we will go to the next line.<br /><br />
+									<li>
+										In line (33) : <strong> <code> if (!directory.exists()) {} </code> </strong> - We are doing the same in the line (13) and check if the path is available or not. If the directory is available the rest of the code will not run (There is no reason tp create a directory when there already is one). If the directory is not present we will go to the next line.<br /><br />
+									</li>
 
-										In the line (34) <strong> <code> if (!directory.mkdirs()) {} </code> </strong> we are creating the directory in the provided path. The line <strong> <code> directory.mkdirs() </code> </strong> will create the specified path for us and as for the condition, if the directory is not created we will print the error message in the next line.<br /><br />
+									<li>
+										In line (34) : <strong> <code> if (!directory.mkdirs()) {} </code> </strong> - We are creating the directory in the provided path. The line <strong> <code> directory.mkdirs() </code> </strong> will create the specified path for us and as for the condition, if the directory is not created we will print the error message in the next line.<br /><br />
+									</li>
 
-										In the line (35) <strong> <code> System.err.println("Failed to create directory in " + path); </code> </strong> we are telling the user that the program fails to create a directory in the machine (OS).<br /><br />
+									<li>
+										In line (35) : <strong> <code> System.err.println("Failed to create directory in " + path); </code> </strong> - We are telling the user that the program fails to create a directory in the machine (OS).<br /><br />
+									</li>
 
+									<li>
 										The next lines you know that if the directory is created we are printing a success message to the user. Now we are out of the createFolder method.
-									</p>
-								</div><br /><br />
+									</li>
+								</ul><br /><br />
 
-								In the line (43) <strong> <code> public static void main(String[] args) {} </code> </strong> we are creating the main method for out application.<br /><br />
+								<li>
+									In line (43) : <strong> <code> public static void main(String[] args) {} </code> </strong> - We are creating the main method for out application.<br /><br />
+								</li>
 
-								In the line (44) <strong> <code> Todo todo = new Todo(); </code> </strong> we are just creating the object which will automatically execute the above codes and create a folder in the suitable location according to the operating system you are using.
-							</p>
+								<li>
+									In line (44) : <strong> <code> Todo todo = new Todo(); </code> </strong> - We are just creating the object which will automatically execute the above codes and create a folder in the suitable location according to the operating system you are using.
+								</li>
+							</ul>
 						</div>
 					</div>
 				</section>
