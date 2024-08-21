@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Simple Blogs</title>
+	<link rel="stylesheet" type="text/css" href="../../../../style.css">
+</head>
+<body>
+	<article>
+		<header>
+			<p>
+				<span style="float: left;"> <strong> Written Date: </strong> 08 August 2024 </span>
+				<span style="float: right;"> <strong> Published Date: </strong> </span>
+			</p> <br /><br />
+		</header>
+		<header style="text-align: center;">
+			<h2>Simple Blogs</h2>
+			<h2>Day 1 of Javascript Interview Questions</h2>
+		</header>
+		<section>
+			<p>
+				<strong>Note:</strong> <br />
+				This article is just an paraphrase of already existing article written by <strong>sabya_samadde</strong> form geeks for geeks. Visit the original article <a href="https://www.geeksforgeeks.org/javascript-interview-questions-and-answers/">Here</a>.
+			</p>
+		</section>
+		<main>
+			<section>
+				<ol style="list-style-type: none;">
+					<li>
+						<header>
+							<h4>Questions:</h4>
+						</header>
+						<section>
+							<ol>
+								<li> What is the difference between java and javascript? </li> <br />
+								<li> What are different data types present in javascript? </li> <br />
+								<li> How to comment in javascript? </li> <br />
+								<li> what is the use of isNaN function? </li> <br />
+								<li> What is negative infinity? </li> <br />
+								<li> Which company developed javascript? </li> <br />
+								<li> What are undefined and undeclared variables? </li> <br />
+								<li> Write javascript code for adding new elements dynamically? </li> <br />
+								<li> What are global variables? How are these variables declared, and what are the problems associated with them? </li> <br />
+								<li> What is NULL in javascript? </li> <br />
+								<li> How to delete property-specific values? </li> <br />
+								<li> What is "this" keyword in javascript? </li> <br />
+								<li> What is a prompt box in javascript? </li> <br />
+								<li> Explain difference between ViewState and SessionState </li> <br />
+								<li> How to submit a form using javascript? <br /><br /> <strong> Intermediate: </strong> </li> <br />
+								<li> What are all the loops in javascript? </li> <br />
+								<li> How to change the style and class of an element in javascript? </li> <br />
+								<li> How to read and write file in javascript? </li> <br />
+								<li> What is variable typing in javascript? </li> <br />
+								<li> How to convert string of any base to integer in javascript? </li> <br />
+								<li> Explain how to detect the operating system on the client machine? </li> <br />
+								<li> What are the types of pop-up boxes available in javascript? </li> <br />
+								<li> What is the difference between an alert box and a confirmation box? </li> <br />
+								<li> What is the disadvantage of using innerHTML in javascript? </li> <br />
+								<li> What is the use of void(0) ? </li> <br />
+								<li> How to get the status of a checkbox in javascript? <br /><br /> <strong> Experienced: </strong> </li> <br />
+								<li> Explain closures in Javascript and when to use it? </li> <br />
+								<li> What is the difference between call() and apply() methods? </li> <br />
+								<li> What are the errors shown in javascript? </li>
+								<li> What is the difference between Javascript and Jscript? </li> <br />
+								<li> What is the difference between innerHTML and innerText? </li> <br />
+								<li> What is an event bubbling in Javascript? </li> <br />
+							</ol>
+						</section> <hr />
+					</li> <br />
+
+					<li>
+						<header>
+							<h4>Question 1:</h4>
+							<p>What is the difference between java and javascript?</p>
+						</header>
+						<section>
+							<p>
+								Javascript is a client side <strong> scripting </strong> language and java is a <strong> object oriented </strong> programming language. Both are so much different compared to each other. <br /> <br />
+
+								<strong>Javascript :</strong> <br />
+								It is a dynamically typed, interpreted, light weighted scripting language used for developing interactive websites. Javascript is also known as "<strong>Browser Language</strong>". <br /> <br />
+
+								<strong>Java : </strong> <br />
+								It is a statically typed, compiled, object oriented programming language that has a virtual machine, which allows you to run the program on nearly every platform. Java promised "<strong>Write once, Run anywhere</strong>".
+							</p>
+						</section> <hr />
+					</li> <br />
+
+					<li>
+						<header>
+							<h4>Question 2:</h4>
+							<p>What are the different datatypes present in javascript?</p>
+						</header>
+						<section>
+							<p>
+								There are three major categories of data type in javascript, they are <br /> <br />
+
+								<u> <strong>Primitive :</strong> </u> <br /> <br />
+								The primtive data types are Numbers, Strings, Boolean, Symbol. <br />
+								<span> <strong>Numbers:</strong> It basically numbers like 1, 435, 3416, etc. </span> <br />
+
+								<span> <strong>String:</strong> A String is a collection of characters. A character is just a single letter or symbol. It is recommended to write the string using double quotes but it can also be written using single quotes. Example of creating a string variable: let var1 = "Javascript Interview Questions". </span> <br />
+
+								<span> <strong>Boolean:</strong> It holds either <strong>"true"</strong> or <strong>"false"</strong>. </span> <br />
+
+								<span> <strong>Symbol:</strong> It is immutable (cannot be changed) and unique. We can use it as a key in a object but we cannot loop it using for in loop. </span> <br /> <br />
+
+								<u> <strong>Composite / Non Primitive :</strong> </u> <br /> <br />
+								The Composite data types are Objects, Functions, Arrays. <br />
+
+								<span> <strong>Object:</strong> The object is an collection of properties. A property is a key: value pair where the key is a string and value can be anything. </span> <br />
+
+								<span> <strong> function: </strong> Afunction is a block of code that is designed to perform a specific task. </span> <br /><br />
+
+								<u> <strong>Trivial :</strong> </u> <br /> <br />
+								Trivial data types are undefined and null. <br />
+
+								<span> <strong> Undefined: </strong> This is a type of error when we try to access a variable that is not defined or declared. </span> <br />
+
+								<span> <strong> Null: </strong> This is the placeholder for a value that indicates the absence of a value. Basically a variable that holds null value is empty. </span> <br /> <br />
+							</p>
+						</section> <hr />
+					</li> <br />
+
+					<li>
+						<header>
+							<h2>Question 3:</h2>
+							<p>How to comment in javascript?</p>
+						</header>
+						<section>
+							<p>
+								The comments are like a guide to programmers, simply put it is an understandable description of what the code is doing, where we can use it for our future self or next developer. The compiler will always ignore the comments when running. There is actually a  There are two types of comment one is one line comment and the other one is multiline comment. <br /> <br />
+
+								<span>
+									<strong>Single line:</strong>
+									We can comment a single line using <strong>"//..."</strong> in javascript. Replace the ... with the actual message.
+								</span> <br />
+
+								<span>
+									<strong>Multi line:</strong>
+									We can comment multi lines using <strong> "/*...*/" </strong> in javascript. Replace the ... with the actual message.
+								</span>
+							</p>
+						</section> <hr />
+					</li> <br />
+
+					<li>
+						<header>
+							<h2>Question 4:</h2>
+							<p>What is the use of isNaN function in javascript?</p>
+						</header>
+						<section>
+							<p>
+								The <strong>isNaN</strong> function is used to check if the variable or input is number or not. If the input is number the function will return false and if the input is not a number the function will return true. It is not considered a reliable way of finding if a variable is a number or not. Rather than we can use <strong>Number.isNan()</strong> for it.
+							</p>
+						</section> <hr />
+					</li> <br />
+
+					<li>
+						<header>
+							<h4>Question 5:</h4>
+							<p>What is negative infinity?</p>
+						</header>
+						<section>
+							<p>
+								The <strong>Number.NEGATIVE_INFINITY</strong> is a constant value that represent the negative infinity number (lowest possible value). Javascript will show the value as <strong>"-Infinity"</strong>.
+							</p>
+						</section> <br />
+					</li> <br />
+
+					<li>
+						<header>
+							<h4>Question 6:</h4>
+							<p>Which company developed Javascript?</p>
+						</header>
+						<section>
+							<p>
+								Javascript was developed by <strong>Netscape</strong> in 1995. It was developed by <strong>Brendan Eich</strong>.
+							</p>
+						</section> <hr />
+					</li> <br />
+
+					<li>
+						<header>
+							<h4>Question 7:</h4>
+							<p>What are undefined and undeclared variables?</p>
+						</header>
+						<section>
+							<p>
+								<span> <u> <strong>Undefined:</strong> </u> A variable that is declared and is not assigned any value before accessing it. Undefined is not a keyword. <br />
+								Example: <code> typeof(variable) </code> <br />
+								The result will be undefined.</span> <br /> <br />
+
+								<span>
+									<u> <strong>Undeclared:</strong> </u>
+									Accessing a variable that is not even decalred. <br />
+									Example: <code> console.log(variable) </code> <br />
+									The result will be an uncaught error.
+								</span>
+							</p>
+						</section> <hr />
+					</li> <br />
+
+					<li>
+						<header>
+							<h2>Question 8:</h2>
+							<p>Write javascript code for adding new elements dynamically.</p>
+						</header>
+						<section>
+							<pre>
+								<code>
+
+		&gt; !DOCTYPE html &gt;
+		&gt; html &gt;
+		&gt; head &gt;
+			&gt; meta charset="utf-8" &gt;
+			&gt; meta name="viewport" content="width=device-width, initial-scale=1" &gt;
+			&gt; title &gt; Simple Blogs &gt; /title &gt;
+		&gt; /head &gt;
+		&gt; body &gt;
+			&gt; div id="parent" &gt;
+				&gt; button onclick="addElement" &gt; Add Element &gt; /button &gt;
+			&gt; /div &gt;
+			&gt; script type="text/javascript" &gt;
+				function addElement() {
+					const parent = document.getElementById('parent')
+
+					const newElement = document.createElement('p')
+					newElement.textContent = "New Element added"
+					parent.appendChild(newElement)
+				}
+			&gt; /script &gt;
+		&gt; /body &gt;
+		&gt; /html &gt;
+								
+								</code>
+							</pre>
+						</section> <hr />
+					</li> <br />
+
+					<li>
+						<header>
+							<h4>Question 9:</h4>
+							<p>What are global variables? How are these variables declared, and what are the problems associated with them?</p>
+						</header>
+						<section>
+							<p>
+								Global variables are variables that define outside the functions. These variables have a global scope, it means the global variables can be accessed by any function without passing it to them as parameters. It is difficult to debug and test the code that relies on global variable.
+							</p>
+						</section> <hr />
+					</li> <br />
+
+					<li>
+						<header>
+							<h2>Question 10:</h2>
+							<p>/what is NULL in javascript?</p>
+						</header>
+						<section>
+							<p>
+								Null is a primitive data type in javascript that represents the intentional absence of any value in a variable.
+							</p>
+						</section> <hr />
+					</li> <br />
+				</ol>
+			</section>
+		</main>
+		<footer>
+			<a href="../interview.html"> Back to Interview </a>
+		</footer>
+	</article>
+</body>
+</html>
